@@ -27,15 +27,16 @@ public class CameraController : MonoBehaviour
         if (_target != null)
         {
             RaycastHit hit;
-            if (Physics.Raycast(_target.transform.position, _delta, out hit, _delta.magnitude, LayerMask.GetMask("Wall")))
+            Vector3 targetPos = _target.transform.position + new Vector3(0, 0.5f, 0);
+            if (Physics.Raycast(targetPos, _delta, out hit, _delta.magnitude, LayerMask.GetMask("Wall")))
             {
-                float dist = (hit.point - _target.transform.position).magnitude * 0.8f;
-                transform.position = _target.transform.position + _delta.normalized * dist;
+                float dist = (hit.point - targetPos).magnitude * 0.8f;
+                transform.position = targetPos + _delta.normalized * dist;
             }
             else
             {
-                transform.position = _target.transform.position + _delta;
-                transform.LookAt(_target.transform);
+                transform.position = targetPos + _delta;
+                transform.LookAt(targetPos);
             }
         }
     }

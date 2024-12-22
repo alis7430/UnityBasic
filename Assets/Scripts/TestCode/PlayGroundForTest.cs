@@ -6,7 +6,12 @@ public class PlayGroundForTest : MonoBehaviour
 {
     void Start()
     {
-        int a = (1 << 8) | (1 << 7);
+        int x = (1 << 8);
+        int y = (1 << 7);
+        int a =  x | y;
+
+        Debug.Log(x);
+        Debug.Log(y);
         Debug.Log(a);
     }
 

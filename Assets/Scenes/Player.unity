@@ -345,7 +345,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1459720265}
   - component: {fileID: 1459720264}
-  - component: {fileID: 1459720266}
   m_Layer: 0
   m_Name: '@Managers'
   m_TagString: Untagged
@@ -381,18 +380,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1459720266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459720263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c6e365ab5743c41a7aced8c652adca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1507449560
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +486,7 @@ GameObject:
   - component: {fileID: 2053566816}
   - component: {fileID: 2053566815}
   - component: {fileID: 2053566814}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,13 +588,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6088906134632928854, guid: 4a2ef34edb52b8c45b100faa588a3795, type: 3}
+      propertyPath: _speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582283206678474873, guid: 4a2ef34edb52b8c45b100faa588a3795, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4bc68bfab6e7ee44189b0fda9de04435, type: 2}
     - target: {fileID: 7582283206685852415, guid: 4a2ef34edb52b8c45b100faa588a3795, type: 3}
       propertyPath: m_Name
       value: UnityChanPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582283206685892319, guid: 4a2ef34edb52b8c45b100faa588a3795, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7582283206685892319, guid: 4a2ef34edb52b8c45b100faa588a3795, type: 3}
       propertyPath: m_LocalPosition.x
