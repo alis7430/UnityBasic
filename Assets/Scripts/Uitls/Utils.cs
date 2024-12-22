@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Utils : MonoBehaviour
 {
+    public static GameObject FindChild(GameObject go, string name = null, bool recursive = false)
+    {
+        Transform t = FindChild<Transform>(go, name, recursive);
+        
+        return t == null ? null : t.gameObject;
+    }
+
     public static T FindChild<T>(GameObject go, string name = null, bool recursive = false) where T : UnityEngine.Object
     {
         if(go == null) return null;
