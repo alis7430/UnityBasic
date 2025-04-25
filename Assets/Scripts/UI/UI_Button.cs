@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_Button : UI_Base
@@ -21,8 +23,11 @@ public class UI_Button : UI_Base
         TestObject,
     }
 
-    [SerializeField]
-    Text _text;
+    enum Images
+    {
+        ItemIcon,
+    }
+
     int _score;
 
     private void Start()
@@ -30,14 +35,19 @@ public class UI_Button : UI_Base
         Bind<Button>(typeof(Buttons));
         Bind<Text>(typeof(Texts));
         Bind<GameObject>(typeof(GameObjects));
+        Bind<Image>(typeof(Images));
 
-        Get<Text>((int)Texts.ScoreText).text = "Bind Text";
+        GetButton((int)Buttons.PointButton).gameObject.AddUIEvent(OnButtonClicked);
+
+        GameObject go = GetImage((int)Images.ItemIcon).gameObject;
+        Action<PointerEventData> action = (PointerEventData data) => { go.transform.position = data.position; };
+        go.AddUIEvent(action, Define.UIEvent.Drag);
     }
 
-    public void OnButtonClicked()
+    public void OnButtonClicked(PointerEventData data)
     {
         _score += 10;
-        _text.text = $"점수 : {_score}";
+        GetText((int)Texts.ScoreText).text = $"점수 : {_score}";
     }
 
 }
