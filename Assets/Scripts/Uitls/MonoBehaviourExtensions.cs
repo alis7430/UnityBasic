@@ -14,7 +14,7 @@ public static class MonoBehaviourExtensions
         return component;
     }
 
-        public static void AddUIEvent(this GameObject go, Action<PointerEventData> action, Define.UIEvent type = Define.UIEvent.Click)
+    public static void AddUIEvent(this GameObject go, Action<PointerEventData> action, Define.UIEvent type = Define.UIEvent.Click)
     {
         UI_EventHandler evt = go.AddMissingComponent<UI_EventHandler>();
         switch(type)

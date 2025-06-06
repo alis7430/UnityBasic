@@ -31,8 +31,11 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         // Subscribe event using Managers.Input
-        // Managers.input.MouseAction -= OnMouseClicked;
-        // Managers.input.MouseAction += OnMouseClicked;
+        Managers.input.MouseAction -= OnMouseClicked;
+        Managers.input.MouseAction += OnMouseClicked;
+
+        // Temp
+        Managers.UI.ShowPopupUI<UI_Button>("UI_Button");
     }
 
     private void Update()
