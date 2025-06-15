@@ -41,7 +41,7 @@ public class UIManager
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = Managers.Resource.Instantiate($"UI/Popup/{name}");
+        GameObject go = Managers.Resource.Instantiate($"UI/Scene/{name}");
         T sceneUI = go.AddMissingComponent<T>();
         _sceneUI = sceneUI;
 
