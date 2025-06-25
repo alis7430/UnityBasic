@@ -33,9 +33,6 @@ public class PlayerController : MonoBehaviour
         // Subscribe event using Managers.Input
         Managers.input.MouseAction -= OnMouseClicked;
         Managers.input.MouseAction += OnMouseClicked;
-
-        // TEMP
-        Managers.UI.ShowSceneUI<UI_Inven>();
     }
 
     private void Update()
