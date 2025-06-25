@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManagerEX : MonoBehaviour
+public class SceneManagerEX
 {
     public BaseScene CurrentScene
     {
@@ -12,10 +12,10 @@ public class SceneManagerEX : MonoBehaviour
             return GameObject.FindObjectOfType<BaseScene>();
         }
     }
-    
+
     public void LoadScene(Define.Scene type)
     {
-        CurrentScene.Clear();
+        Managers.Clear();
         SceneManager.LoadScene(GetSceneName(type));
     }
 
@@ -23,5 +23,10 @@ public class SceneManagerEX : MonoBehaviour
     {
         string name = System.Enum.GetName(typeof(Define.Scene), type);
         return name;
+    }
+
+    public void Clear()
+    {
+        CurrentScene.Clear();
     }
 }

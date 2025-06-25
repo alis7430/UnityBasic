@@ -19,6 +19,12 @@ public class InputManager
         OnUpdateMouseAction();
     }
 
+    public void Clear()
+    {
+        KeyAction = null;
+        MouseAction = null;
+    }
+
     private void OnUpdateKeyAction()
     {
         if (Input.anyKey)

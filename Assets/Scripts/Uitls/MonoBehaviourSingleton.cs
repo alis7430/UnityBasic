@@ -29,20 +29,20 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviour
     #region [Properties]
     public static T Instance
     {
-        get 
+        get
         {
             if (_shuttingDown)
             {
-                Debug.LogWarning("A singleton instance '" + typeof(T) +"' already destroyed. It returns null.");
+                Debug.LogWarning("A singleton instance '" + typeof(T) + "' already destroyed. It returns null.");
                 return null;
             }
 
-            lock(_instanceLock)
+            lock (_instanceLock)
             {
                 // at first, find existing instance
                 _instance = (T)FindObjectOfType(typeof(T));
 
-                if(_instance == null)
+                if (_instance == null)
                 {
                     var go = new GameObject();
                     _instance = go.AddComponent<T>();
@@ -61,9 +61,12 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviour
         // make persistent intance
         if (_DontDestoryOnLoad)
             DontDestroyOnLoad(this.gameObject);
+
+        OnInit();
     }
 
     private void OnApplicationQuit() => _shuttingDown = true;
     private void OnDestroy() => _shuttingDown = true;
+    protected virtual void OnInit() { }
     #endregion
 }
