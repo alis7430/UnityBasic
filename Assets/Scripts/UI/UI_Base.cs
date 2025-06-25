@@ -37,6 +37,8 @@ public abstract class UI_Base : MonoBehaviour
         return objects[idx] as T;
     }
 
+
+    protected GameObject GetObject(int idx) => Get<GameObject>(idx);
     protected Text GetText(int idx) => Get<Text>(idx);
     protected Button GetButton(int idx) => Get<Button>(idx);
     protected Image GetImage(int idx) => Get<Image>(idx);
