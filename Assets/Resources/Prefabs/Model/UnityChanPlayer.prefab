@@ -5345,6 +5345,7 @@ GameObject:
   - component: {fileID: 7582283206685892319}
   - component: {fileID: 7582283206678474873}
   - component: {fileID: 6088906134632928854}
+  - component: {fileID: -3237302558542224360}
   - component: {fileID: 2700908397076633075}
   m_Layer: 0
   m_Name: UnityChanPlayer
@@ -5380,7 +5381,7 @@ Animator:
   m_GameObject: {fileID: 7582283206685852415}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2fbe766bd2c40824b989675d5b459a53, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4bc68bfab6e7ee44189b0fda9de04435, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5404,6 +5405,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+--- !u!114 &-3237302558542224360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7582283206685852415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb9ad692f906c14e95f810d5ced2969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsUsing: 0
 --- !u!136 &2700908397076633075
 CapsuleCollider:
   m_ObjectHideFlags: 0
