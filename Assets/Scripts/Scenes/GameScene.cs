@@ -10,6 +10,8 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.Game;
         Managers.UI.ShowSceneUI<UI_Inven>();
+
+        var dict = Managers.Data.StatDict;
     }
 
     public override void Clear()
